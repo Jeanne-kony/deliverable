@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/posts', 'PostController@index');
+Route::get('/', 'PostController@index');
+Route::get('/posts/show', 'PostController@show');
+Route::get('/posts/study', 'PostController@study');
+Route::get('/posts/calendar', 'PostController@calendar');
+Route::get('/posts/study/timer', 'PostController@timer');
