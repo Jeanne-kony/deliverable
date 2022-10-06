@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserTable extends Migration
+class CreateCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-           $table->bigincrements('id');
-           $table->ipAddress('mail_address');
-           $table->ipAddress('password');
+        Schema::create('category', function (Blueprint $table) {
+            $table->bigIncrements('category_id');
+            $table->unsignedBigInteger('studies_id');
+            $table->foreign('studies_id')->references('id')->on('user');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('category');
     }
 }
