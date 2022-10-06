@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+@extends('layouts.app')　　　　　　　　　　　　　　　　　　
+
+@section('content')
 <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -9,17 +12,17 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1 class="title">
-            カテゴリー
-        </h1>
+        <h2 class="title">
+            &emsp;&emsp;順位&emsp;&emsp;名前&emsp;&emsp;時間
+        </h2>
         <div class="content">
-            <h2>内容</h2>
-            <div class="content__post">
-                <a href='/posts/study/timer'><h1>&emsp;&emsp;&emsp;&emsp;&emsp;計測開始</h1></a>
-            </div>
+            
+                <h3>カテゴリー</h3>
+                  
         </div>
         <div class="footer">
             <a href="/">戻る</a>
         </div>
     </body>
 </html>
+@endsection

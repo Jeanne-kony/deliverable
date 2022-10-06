@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+@extends('layouts.app')　　　　　　　　　　　　　　　　　　
+
+@section('content')
 <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -13,13 +16,13 @@
            カテゴリー
         </h2>
         <div class="content">
-            <div class="text-center">
+            
                 <h1>時間</h1>
-                
-            </div>
+            
         </div>
         <div class="footer">
-            <a href="/posts/study">戻る</a>
+            <a href="/posts/studystart">戻る</a>
         </div>
     </body>
 </html>
+@endsection
