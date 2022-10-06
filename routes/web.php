@@ -11,10 +11,19 @@
 |
 */
 
+Route::group(['middleware' => ['auth']], function(){
+Route::get('/', 'StudyController@mypage');
+Route::get('/posts/ranking', 'StudyController@ranking');
+Route::get('/posts/studystart', 'StudyController@studystart');
+Route::get('/posts/calendar', 'StudyController@calendar');
+Route::get('/posts/studystart/timer', 'StudyController@timer');
+});
 
-Route::get('/posts', 'PostController@index');
-Route::get('/', 'PostController@index');
-Route::get('/posts/show', 'PostController@show');
-Route::get('/posts/study', 'PostController@study');
-Route::get('/posts/calendar', 'PostController@calendar');
-Route::get('/posts/study/timer', 'PostController@timer');
+/*Route::get('/', 'LayoutController@mypage');
+Route::get('/layout', 'LayoutController@mypage');
+Route::get('/star/sun', 'LayoutController@sun');
+Route::get('/star/moon', 'LayoutController@moon');
+*/
+Auth::routes();
+
+
