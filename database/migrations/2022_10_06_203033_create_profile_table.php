@@ -14,11 +14,11 @@ class CreateProfileTable extends Migration
     public function up()
     {
         Schema::create('profile', function (Blueprint $table) {
-            $table->bigIncrements('profile_id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('user');
-            $table->ipAddress('name');
-            $table->ipAddress('job');
+            $table->string('name',30);
+            $table->string('job',30);
         });
     }
 
