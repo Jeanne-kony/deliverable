@@ -20,7 +20,7 @@ class CreateStudiesTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('user');
             $table->time('study_time', $precision = 0);
-            $table->ipAddress('description');
+            $table->text('description');
         });
     }
 

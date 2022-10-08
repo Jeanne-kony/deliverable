@@ -42,10 +42,10 @@ class User extends Authenticatable
 class User extends Model
 {
     public function profiles(){
-        return $this->hasMany('App\Profile');
+        return $this->hasOne('App\Profile');
     }
     
     public function study(){
-        return $this->hasOne('App\Studies');
+        return $this->hasMany('App\Studies');
         }
 }
